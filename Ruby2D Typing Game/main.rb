@@ -1,6 +1,5 @@
 #!/usr/bin/env ruby
 require 'ruby2d'
-require 'rbconfig'
 
 l1, l2, l3 = File.open('words/1_letter_words').read.split, File.open('words/2_letter_words').read.split, File.open('words/3_letter_words').read.split
 l4, l5, l6 = File.open('words/4_letter_words').read.split, File.open('words/5_letter_words').read.split, File.open('words/6_letter_words').read.split
