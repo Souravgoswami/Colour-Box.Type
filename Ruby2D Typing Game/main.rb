@@ -337,22 +337,22 @@ def main
 		obj0.fade(e.x, e.y) ; obj1.fade(e.x, e.y) ; obj2.fade(e.x, e.y) ; obj3.fade(e.x, e.y)
 		obj4.pos(e.x, e.y, true) ; obj5.pos(e.x, e.y, true) ; obj6.pos(e.x, e.y, true)
 
-		if e.x >= newgame.x  and e.x <= newgame.width + newgame.x and e.y >= newgame.y and e.y <= newgame.height + newgame.y then interactive_btn(newgame, clear_t, 'blue', 'white')
+		if newgame.contains?(e.x, e.y) then interactive_btn(newgame, clear_t, 'blue', 'white')
 		else interactive_btn(newgame, clear_t, '#3ce3b4')  end
 
-		if e.x >= chng_bg.x  and e.x <= chng_bg.width + chng_bg.x and e.y >= chng_bg.y and e.y <= chng_bg.height + chng_bg.y then interactive_btn(chng_bg, chng_bg_t, 'blue', 'white')
+		if chng_bg.contains?(e.x, e.y) then interactive_btn(chng_bg, chng_bg_t, 'blue', 'white')
 		else interactive_btn(chng_bg, chng_bg_t, '#3ce3b4') end
 
-		if e.x >= level_plus.x  and e.x <= level_plus.width + level_plus.x and e.y >= level_plus.y and e.y <= level_plus.height + level_plus.y then interactive_btn(level_plus, level_plus_t, 'blue', 'white')
+		if level_plus.contains?(e.x, e.y) then interactive_btn(level_plus, level_plus_t, 'blue', 'white')
 		else interactive_btn(level_plus, level_plus_t, '#3ce3b4') end
 
-		if e.x >= level_minus.x  and e.x <= level_minus.width + level_minus.x and e.y >= level_minus.y and e.y <= level_minus.height + level_minus.y then interactive_btn(level_minus, level_minus_t, 'blue', 'white')
+		if level_minus.contains?(e.x, e.y) then interactive_btn(level_minus, level_minus_t, 'blue', 'white')
 		else interactive_btn(level_minus, level_minus_t, '#3ce3b4') end
 
-		if e.x >= word_box.x and e.x <= word_box.width + word_box.x and e.y >= word_box.y and e.y <= word_box.height + word_box.y then interactive_btn(word_box, word, 'yellow', 'white')
+		if word_box.contains?(e.x, e.y) then interactive_btn(word_box, word, 'yellow', 'white')
 		else interactive_btn(word_box, word, 'white', 'red') end
 
-		if e.x >= name_box.x and e.x <= name_box.width + name_box.x and e.y >= name_box.y and e.y <= name_box.height + name_box.y
+		if name_box.contains?(e.x, e.y)
 			interactive_btn(name_box, nameline, 'black', 'green')
 			interactive_btn(name_box, username, 'black', 'green')
 		elsif !started
@@ -360,41 +360,41 @@ def main
 			interactive_btn(name_box, username, 'white', 'green')
 		end
 
-		if e.x >= stats_box.x and e.x <= stats_box.width + stats_box.x and e.y >= stats_box.y and e.y <= stats_box.height + stats_box.y then interactive_btn(stats_box, stats_label, 'fuchsia', 'white')
+		if stats_box.contains?(e.x, e.y) then interactive_btn(stats_box, stats_label, 'fuchsia', 'white')
 		else interactive_btn(stats_box, stats_label, 'blue') end
 
-		if e.x >= reset_box.x and e.x <= reset_box.width + reset_box.x and e.y >= reset_box.y and e.y <= reset_box.height + reset_box.y then interactive_btn(reset_box, reset_label, 'fuchsia', 'white')
+		if reset_box.contains?(e.x, e.y) then interactive_btn(reset_box, reset_label, 'fuchsia', 'white')
 		else interactive_btn(reset_box, reset_label, 'blue') end
 
-		if e.x >= exit_box.x and e.x <= exit_box.width + exit_box.x and e.y >= exit_box.y and e.y <= exit_box.height + exit_box.y then interactive_btn(exit_box, exit_label, 'red', 'white')
+		if exit_box.contains?(e.x, e.y) then interactive_btn(exit_box, exit_label, 'red', 'white')
 		else interactive_btn(exit_box, exit_label, 'blue') end
 
-		if e.x >= about_box.x and e.x <= about_box.width + about_box.x and e.y >= about_box.y and e.y <= about_box.height + about_box.y then interactive_btn(about_box, about_label, 'red', 'white')
+		if about_box.contains?(e.x, e.y) then interactive_btn(about_box, about_label, 'red', 'white')
 		else interactive_btn(about_box, about_label, 'blue') end
 
-		if e.x >= wpm_box.x  and e.x <= wpm_box.width + wpm_box.x and e.y >= wpm_box.y and e.y <= wpm_box.height + wpm_box.y then interactive_btn(wpm_box, wpm_label, 'yellow', 'white')
+		if wpm_box.contains?(e.x, e.y) then interactive_btn(wpm_box, wpm_label, 'yellow', 'white')
 		else interactive_btn(wpm_box, wpm_label, 'black', 'yellow')  end
 
-		if e.x >= time_box.x  and e.x <= time_box.width + time_box.x and e.y >= time_box.y and e.y <= time_box.height + time_box.y then interactive_btn(time_box, tm, 'blue', 'white')
+		if time_box.contains?(e.x, e.y) then interactive_btn(time_box, tm, 'blue', 'white')
 		else interactive_btn(time_box, tm, 'black', 'blue')  end
 
-		if e.x >= total_typed_box.x  and e.x <= total_typed_box.width + total_typed_box.x and e.y >= total_typed_box.y and e.y <= total_typed_box.height + total_typed_box.y then interactive_btn(total_typed_box, total_typed, 'purple', 'white')
+		if total_typed_box.contains?(e.x, e.y) then interactive_btn(total_typed_box, total_typed, 'purple', 'white')
 		else interactive_btn(total_typed_box, total_typed, 'black', 'purple')  end
 
-		if e.x >= total_missed_box.x  and e.x <= total_missed_box.width + total_missed_box.x and e.y >= total_missed_box.y and e.y <= total_missed_box.height + total_missed_box.y then interactive_btn(total_missed_box, total_missed, '#FF7163', 'white')
+		if total_missed_box.contains?(e.x, e.y)  then interactive_btn(total_missed_box, total_missed, '#FF7163', 'white')
 		else interactive_btn(total_missed_box, total_missed, 'black', '#FF7163')  end
 
-		if e.x >= chances_box.x  and e.x <= chances_box.width + chances_box.x and e.y >= chances_box.y and e.y <= chances_box.height + chances_box.y then interactive_btn(chances_box, chances_label, 'green', 'white')
+		if chances_box.contains?(e.x, e.y) then interactive_btn(chances_box, chances_label, 'green', 'white')
 		else interactive_btn(chances_box, chances_label, 'black', 'green')  end
 
-		if e.x >= level_details_box.x  and e.x <= level_details_box.width + level_details_box.x and e.y >= level_details_box.y and e.y <= level_details_box.height + level_details_box.y then interactive_btn(level_details_box, level_details_text, 'teal', 'white')
+		if level_details_box.contains?(e.x, e.y) then interactive_btn(level_details_box, level_details_text, 'teal', 'white')
 		else interactive_btn(level_details_box, level_details_text, 'black', 'teal')  end
 	end
 
 	on :mouse_down do |e|
 		obj4.pos(e.x, e.y) ; obj5.pos(e.x, e.y) ; obj6.pos(e.x, e.y)
 		obj0.fade(e.x, e.y) ; obj1.fade(e.x, e.y) ; obj2.fade(e.x, e.y) ; obj3.fade(e.x, e.y)
-		if (e.x >= newgame.x  and e.x <= newgame.width + newgame.x and e.y >= newgame.y and e.y <= newgame.height + newgame.y) and !username.text.empty?
+		if newgame.contains?(e.x, e.y) and !username.text.empty?
 			interactive_btn(newgame, clear_t, $colours.rotate[0], 'white')
 			started = true
 			inittext.text, inittext.opacity, inittext.y = 'Lets Begin!', 1, inittext.y = $height/2 - inittext.height
@@ -410,58 +410,40 @@ def main
 				obj7.pos(rand(0..$width - 265), rand($height - 100..$height))
 				obj8.pos(rand(0..$width - 265), rand($height - 200..$height))
 				obj9.pos(rand(0..$width - 265), rand($height - 300..$height - 100)) }
-		elsif e.x >= chng_bg.x  and e.x <= chng_bg.width + chng_bg.x and e.y >= chng_bg.y and e.y <= chng_bg.height + chng_bg.y
+		elsif chng_bg.contains?(e.x, e.y)
 			available_colours, colours, $colours = %w(#3ce3b5 fuchsia orange blue green red yellow #E58AE8 #EB65BB), [], []
 			until colours.length == 4 do colours << available_colours.delete(available_colours.sample) end
 			colours.permutation { |colour| $colours << colour }
 			chng_bg_value = true
 			buttonpressed.play
-		elsif e.x >= level_plus.x  and e.x <= level_plus.width + level_plus.x and e.y >= level_plus.y and e.y <= level_plus.height + level_plus.y
+		elsif level_plus.contains?(e.x, e.y)
 			interactive_btn(level_plus, level_plus_t)
 			level += 1 if level < 11
 			oldlevel, level_plus_value = level, true
 			buttonpressed.play
-		elsif e.x >= level_minus.x  and e.x <= level_minus.width + level_minus.x and e.y >= level_minus.y and e.y <= level_minus.height + level_minus.y
+		elsif level_minus.contains?(e.x, e.y)
 			interactive_btn(level_minus, level_minus_t)
 			level -= 1 if level > 1
 			oldlevel, level_minus_value = level, true
 			buttonpressed.play
-		elsif e.x >= level_details_box.x  and e.x <= level_details_box.width + level_details_box.x and e.y >= level_details_box.y and e.y <= level_details_box.height + level_details_box.y
+		elsif  level_details_box.contains?(e.x, e.y)
 			interactive_btn(level_details_box, level_details_text)
 		 	level += 1 if level <= 11
 			level = 1 if level > 11
-		elsif e.x >= stats_box.x and e.x <= stats_box.width + stats_box.x and e.y >= stats_box.y and e.y <= stats_box.height + stats_box.y
-			interactive_btn(stats_box, stats_label)
-			system('xdg-open', 'data/info')
-			plop.play
-		elsif e.x >= reset_box.x and e.x <= reset_box.width + reset_box.x and e.y >= reset_box.y and e.y <= reset_box.height + reset_box.y
-			interactive_btn(reset_box, reset_label)
-			plop.play
-		elsif e.x >= exit_box.x and e.x <= exit_box.width + exit_box.x and e.y >= exit_box.y and e.y <= exit_box.height + exit_box.x
-			interactive_btn(exit_box, exit_label)
-			exit_sound.play
-		elsif e.x >= about_box.x and e.x <= about_box.width + about_box.x and e.y >= about_box.y and e.y <= about_box.height + exit_box.x
-			interactive_btn(about_box, about_label)
-			exit_sound.play
-			system('xdg-open', 'data/about.png') if RbConfig::CONFIG['host_os'] == "linux-gnu"
-			system('open', 'data/about.png') if RbConfig::CONFIG['host_os'] == "darwin"
-		else
-			$colours.rotate!
-		end
+		elsif stats_box.contains?(e.x, e.y) then interactive_btn(stats_box, stats_label) ; system('xdg-open', 'data/info') ; plop.play
+		elsif reset_box.contains?(e.x, e.y) then interactive_btn(reset_box, reset_label) ; plop.play
+		elsif exit_box.contains?(e.x, e.y) then interactive_btn(exit_box, exit_label) ; exit_sound.play
+		elsif about_box.contains?(e.x, e.y) then interactive_btn(about_box, about_label) ; exit_sound.play ; system('xdg-open', 'data/about.png')
+		else $colours.rotate! end
 	end
 
 	on :mouse_up do |e|
-		if e.x >= newgame.x  and e.x <= newgame.width + newgame.x and e.y >= newgame.y and e.y <= newgame.height + newgame.y
-			interactive_btn(newgame, clear_t, 'blue', 'white') ; clear_value = false
-		elsif e.x >= chng_bg.x  and e.x <= chng_bg.width + chng_bg.x and e.y >= chng_bg.y and e.y <= chng_bg.height + chng_bg.y
-			interactive_btn(chng_bg, chng_bg_t, 'blue', 'white') ; chng_bg_value = false
-		elsif e.x >= level_plus.x  and e.x <= level_plus.width + level_plus.x and e.y >= level_plus.y and e.y <= level_plus.height + level_plus.y
-			interactive_btn(level_plus, level_plus_t, 'blue', 'white') ; level_plus_value = false
-		elsif e.x >= level_minus.x  and e.x <= level_minus.width + level_minus.x and e.y >= level_minus.y and e.y <= level_minus.height + level_minus.y
-			interactive_btn(level_minus, level_minus_t, 'blue', 'white') ; level_minus_value = false
-		elsif e.x >= exit_box.x and e.x <= exit_box.width + exit_box.x and e.y >= exit_box.y and e.y <= exit_box.height + exit_box.x
-			interactive_btn(exit_box, exit_label, $colours.rotate[0], 'white') ; close
-		elsif e.x >= reset_box.x and e.x <= reset_box.width + reset_box.x and e.y >= reset_box.y and e.y <= reset_box.height + reset_box.y
+		if newgame.contains?(e.x, e.y) then interactive_btn(newgame, clear_t, 'blue', 'white') ; clear_value = false
+		elsif chng_bg.contains?(e.x, e.y) then interactive_btn(chng_bg, chng_bg_t, 'blue', 'white') ; chng_bg_value = false
+		elsif level_plus.contains?(e.x, e.y) then interactive_btn(level_plus, level_plus_t, 'blue', 'white') ; level_plus_value = false
+		elsif level_minus.contains?(e.x, e.y) then interactive_btn(level_minus, level_minus_t, 'blue', 'white') ; level_minus_value = false
+		elsif exit_box.contains?(e.x, e.y) then interactive_btn(exit_box, exit_label, $colours.rotate[0], 'white') ; close
+		elsif reset_box.contains?(e.x, e.y)
 			interactive_btn(reset_box, reset_label, $colours.rotate[0], 'white')
 			plop.play
 			$info.truncate(0)
